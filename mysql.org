@@ -1,4 +1,4 @@
-#+TITLE: mysql
+#+TITLE: mysql相关命令参考
 #+AUTHOR: vermin
 #+OPTIONS: H:3 TOC:t
 #+DESCRIPTION: mysql相关记录
@@ -6,10 +6,17 @@
 * 导航                                                             :TOC_2_gh:
 - [[#相关问题处理方式][相关问题处理方式]]
   - [[#mysql连接数满][mysql连接数满]]
+  - [[#授权][授权]]
 
 * 相关问题处理方式
 ** mysql连接数满
    通过gdb动态调整连接数，然后连进去后处理
    #+begin_src sh
    gdb -p ${pid} -ex "set max_connections = 10000" -batch
+   #+end_src
+** 授权
+   #+begin_src sql
+   GRANT create,alter,select,update,insert,delete ON *.* TO user@"%.%.%.%" IDENTIFIED BY 'passwd';
+   GRANT REPLICATION SLAVE ON *.* TO rep@%.%.%.% IDENTIFIED BY 'rep';
+   flush privileges;
    #+end_src

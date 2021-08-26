@@ -1,0 +1,42 @@
+#+TITLE: 常用命令参考
+#+AUTHOR: vermin
+#+OPTIONS: H:3 TOC:t
+#+DESCRIPTION: 常用的一些命令以及shell脚本例子
+
+* 导航                                                             :TOC_2_gh:
+- [[#linux-运维常用命令][linux 运维常用命令]]
+  - [[#rsync][rsync]]
+  - [[#tcpdump][tcpdump]]
+- [[#shell参考代码][shell参考代码]]
+  - [[#awk][awk]]
+  - [[#生成随机数][生成随机数]]
+
+* linux 运维常用命令
+** rsync
+   #+begin_src sh
+   rsync -av -e "/usr/local/bin/ssh -p 36000"    xxx.tar.gz  root@127.0.0.1:/root/
+   #+end_src
+** tcpdump
+   #+begin_src sh
+   # tcpdump
+   /usr/sbin/tcpdump -i any host 127.0.0.1 and port 443 -lXnps0
+   /usr/sbin/tcpdump -i any "udp and host 127.0.0.1 and port 443" -lXnps0
+   #tcpdump 抓包
+   nohup tcpdump -i any host 127.0.0.1 and port 443 and host ! 127.0.0.2 &
+   #+end_src
+
+* shell参考代码
+** awk
+   #+begin_src sh
+   # 读取数据
+   awk '{t=$1;getline <"b.txt";print t"\\"$i }' a.txt
+
+   # 循环统计
+   cat a.txt | awk '{sum[$1]+=$2;count[$1]++};END{for(name in count)print name, count[name], sum[name]/count[name]}'
+   cat a.txt | awk '{sum[$1]+=$2} END{for(i in sum) print i, sum[i]}'
+   #+end_src
+
+** 生成随机数
+   #+begin_src sh
+   cat /dev/urandom | tr -dc A-Za-z0-9_ | head -c31 | sed 's/[ \r\b]//g'
+   #+end_src
