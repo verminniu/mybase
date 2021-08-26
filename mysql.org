@@ -1,5 +1,6 @@
 #+TITLE: mysql
 #+AUTHOR: vermin
+#+OPTIONS: H:3 TOC:t
 #+DESCRIPTION: mysql相关记录
 
 * 导航                                                             :TOC_2_gh:
