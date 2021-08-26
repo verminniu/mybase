@@ -9,6 +9,6 @@
 * 相关问题处理方式
 ** mysql连接数满
    通过gdb动态调整连接数，然后连进去后处理
-   #+begin_src shell
+   #+begin_src sh
    gdb -p ${pid} -ex "set max_connections = 10000" -batch
    #+end_src
