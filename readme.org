@@ -1,4 +1,4 @@
-#+TITLE: 自己的知识积累
+#+TITLE: 备忘
 #+AUTHOR: vermin
 #+OPTIONS: H:3 TOC:t
 #+DESCRIPTION: 常用的一些命令以及shell脚本例子
