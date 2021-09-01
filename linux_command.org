@@ -5,6 +5,7 @@
 
 * 导航                                                             :TOC_2_gh:
 - [[#linux-运维常用命令][linux 运维常用命令]]
+  - [[#恢复deleted状态文件][恢复deleted状态文件]]
   - [[#rsync][rsync]]
   - [[#tcpdump][tcpdump]]
 - [[#shell参考代码][shell参考代码]]
@@ -12,6 +13,12 @@
   - [[#生成随机数][生成随机数]]
 
 * linux 运维常用命令
+** 恢复deleted状态文件
+   使用中的日志文件删除，会变成deleted状态，进程还会往里面写数据，进程不重启，可以恢复
+   1) 先lsof找到对应的文件的fd
+   2) 进入/proc/pid/fd目录下，找到对应的fd
+   3) 直接访问此fd即可，tail，cat都可以看到后续的写入
+
 ** rsync
    #+begin_src sh
    rsync -av -e "/usr/local/bin/ssh -p 36000"    xxx.tar.gz  root@127.0.0.1:/root/
