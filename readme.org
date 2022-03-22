@@ -6,4 +6,6 @@
 * mysql 常用命令
 ** [[file:mysql.org][mysql 备忘]]
 * linux
-** [[file:linux_command.org][linux备忘]]
+** [[file:linux_command.org][linux 备忘]]
+* emacs相关
+** [[file:emacs.org][emacs 备忘]]

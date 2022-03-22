@@ -1,0 +1,24 @@
+#+TITLE: emacs相关
+#+AUTHOR: vermin
+#+OPTIONS: H:3 TOC:t
+#+DESCRIPTION: emacs相关记录
+
+* 导航                                                                   :TOC_2:
+- [[#相关操作][相关操作]]
+  - [[#counsel-rg-搜索结果批量替换][counsel-rg 搜索结果批量替换]]
+  - [[#org增加目录][org增加目录]]
+
+* 相关操作
+** counsel-rg 搜索结果批量替换
+需要提前安装package wgrep
+#+begin_quote
+counsel-rg 出结果之后，按 C-c C-o 进入 ivy-occur，然后按 w 进入编辑模式，然后 M-x % 批量替换，然后 C-x C-s 保存。
+#+end_quote
+** org增加目录
+基于 toc-org
+#+begin_quote
+To add a TOC tag, you can use the command org-set-tags-command (C-c C-q).
+In addition to the simple :TOC: tag, you can also use the following tag formats:
+:TOC_2: - sets the max depth of the headlines in the table of contents to 2 (the default)
+:TOC_2_gh: - sets the max depth as in above and also uses the GitHub-style hrefs in the table of contents (this style is default). The other supported href style is ‘org’, which is the default org style.
+#+end_quote
