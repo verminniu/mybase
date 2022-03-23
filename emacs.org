@@ -7,6 +7,8 @@
 - [[#相关操作][相关操作]]
   - [[#counsel-rg-搜索结果批量替换][counsel-rg 搜索结果批量替换]]
   - [[#org增加目录][org增加目录]]
+- [[#待考察插件][待考察插件]]
+  - [[#shrface][shrface]]
 
 * 相关操作
 ** counsel-rg 搜索结果批量替换
@@ -21,4 +23,11 @@ To add a TOC tag, you can use the command org-set-tags-command (C-c C-q).
 In addition to the simple :TOC: tag, you can also use the following tag formats:
 :TOC_2: - sets the max depth of the headlines in the table of contents to 2 (the default)
 :TOC_2_gh: - sets the max depth as in above and also uses the GitHub-style hrefs in the table of contents (this style is default). The other supported href style is ‘org’, which is the default org style.
+#+end_quote
+
+* 待考察插件
+** shrface
+wee浏览器
+#+begin_quote
+https://github.com/chenyanming/shrface
 #+end_quote
