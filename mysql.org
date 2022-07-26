@@ -8,6 +8,8 @@
   - [[#mysql连接数满][mysql连接数满]]
   - [[#授权][授权]]
 - [[#mysql相关原理备忘][MySQL相关原理备忘]]
+  - [[#mysql主备数据克隆][MySQL主备数据克隆]]
+  - [[#mysql性能监控][MySQL性能监控]]
   - [[#mgr][MGR]]
   - [[#mysql日志类型][MySQL日志类型]]
 
@@ -24,6 +26,11 @@
    flush privileges;
    #+end_src
 * MySQL相关原理备忘
+** MySQL主备数据克隆
+mydumper
+dumpling
+** MySQL性能监控
+orzdba
 ** MGR
 MGR paxos协议同步，多主模式
 MHA 一主2从，优先级切换，选择gtid最大的备机同步
@@ -33,6 +40,18 @@ MHA 一主2从，优先级切换，选择gtid最大的备机同步
 
   按照expire_logs_days来保存数据
 - redolog
+  保持事务一致性，用来恢复未写入datafile的数据
   记录物理数据页面写修改信息，顺序写入，事务执行过程中就写入，刷入磁盘以后，就释放
+  先写入innodb_log_buffer，默认每秒刷新innodb_log_buffer到redolog
 
   ib_logfilexxx
+
+- undolog
+  事务发生前的版本，用于回滚，提供多版本下mvcc控制的读操作（非锁定读）
+  事务开始之前生成undolog，undo也会产生redolog，保证事务可靠性，清理的时候是放入待清理链表，然后purge线程判断是否有事务访问，如果没失误访问，则清理undo log空间
+
+- slow log
+  慢查询
+
+- general query log
+  所有的查询
