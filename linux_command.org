@@ -8,6 +8,7 @@
   - [[#恢复deleted状态文件][恢复deleted状态文件]]
   - [[#rsync][rsync]]
   - [[#tcpdump][tcpdump]]
+  - [[#tcp-状态高级信息][tcp 状态高级信息]]
 - [[#shell参考代码][shell参考代码]]
   - [[#awk][awk]]
   - [[#生成随机数][生成随机数]]
@@ -32,6 +33,11 @@
    nohup tcpdump -i any host 127.0.0.1 and port 443 and host ! 127.0.0.2 &
    #+end_src
 
+** tcp 状态高级信息
+参考： https://satori-monitoring.readthedocs.io/zh/latest/builtin-metrics/tcpext.html
+#+begin_src sh
+netstat -st
+#+end_src
 * shell参考代码
 ** awk
    #+begin_src sh
