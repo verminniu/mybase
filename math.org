@@ -1,0 +1,11 @@
+#+TITLE: math 数学相关
+#+AUTHOR: vermin
+#+OPTIONS: H:3 TOC:t
+#+DESCRIPTION: 数学相关学习记录
+
+* 导航                                                             :TOC_2_gh:
+* 基础算法和概念
+** 费尔马小定律 - 加解密
+** 马尔科夫链->贝叶斯网络
+** 条件随机场
+** 期望最大化算法
